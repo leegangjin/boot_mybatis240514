@@ -1,6 +1,8 @@
 package com.ezen.www.service;
 
+import com.ezen.www.domain.BoardDTO;
 import com.ezen.www.domain.BoardVO;
+import com.ezen.www.domain.PagingVO;
 
 import java.util.List;
 
@@ -8,14 +10,17 @@ public interface BoardService {
 
 
 
-    int register(BoardVO bvo);
+    int register(BoardDTO bdto);
 
 
-    Object getList();
+    List<BoardVO> getList(PagingVO pgvo);
 
-    Object getDetail(long bno);
+    BoardDTO getDetail(long bno);
 
     void remove(long bno);
 
     void modify(BoardVO bvo);
+
+
+    int getTotalCount(PagingVO pgvo);
 }
